@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const NavigationBar = () => {
   return (
@@ -9,10 +10,10 @@ const NavigationBar = () => {
                 placeholder='Search'
             />
         </form>
-        <ul>
-                <li>Home</li>
-                <li>Posts</li>
-                <li>About</li>
+        <ul className='menu'>
+                <li><Link className='menuLink' to={'/'}>Home</Link></li>
+                <li><Link className='menuLink' to={'/post'}>Post</Link></li>
+                <li><Link className='menuLink' to={'/about'}>About</Link></li>
             </ul>
     </nav>
   )
