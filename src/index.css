@@ -45,7 +45,7 @@ nav{
   transform: 2s;
 }
 .searchForm{
-  padding: 5px;
+  margin: 5px;
 }
 .searchForm{
   width: 70%;
@@ -59,6 +59,7 @@ nav{
   display: flex;
   font-size: 1.5rem;
   list-style: none;
+  
   
 }
 .menuLink{
@@ -77,6 +78,7 @@ main{
   flex-direction: column;
   width: 100%;
   overflow-y: scroll;
+  height: 100%;
 }
 main::-webkit-scrollbar{
   display: none;
@@ -91,6 +93,8 @@ main::-webkit-scrollbar{
   display: flex;
   flex-direction: column;
   padding: 8px;
+  width: 100%;
+  flex-grow: 1;
 }
 .newpostForm label{
   font-size: 1.2rem;
@@ -126,6 +130,37 @@ footer{
   flex-grow: 1;
   width: 100%;
   padding: 10px;
+  min-height: 500px;
+}
+
+.editBt{
+  padding: 8px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background-color: rgba(50, 50, 234, 0.782);
+  color: white;
+  width: 150px;
+  margin: 5px;
+  box-shadow: 2px 2px 8px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.editBt:hover{
+  background-color: rgba(50, 50, 234, 0.682);
+}
+.deleteBt{
+  padding: 8px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background-color: rgba(242, 31, 31, 0.893);
+  color: white;
+  width: 150px;
+  box-shadow: 2px 2px 8px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.deleteBt:hover{
+  background-color: rgba(242, 31, 31, 0.793);
 }
 
 
@@ -138,6 +173,10 @@ footer{
   }
   .searchForm{
     width:50% ;
+  }
+  .menu{
+    height: 100%;
+    align-items: center;
   }
   
 }

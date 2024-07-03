@@ -43,6 +43,14 @@ function App() {
     setBody('')
     navigator('/')
   }
+  const handleEditPost=(e,id)=>{
+    e.preventDefault()
+    const newPost=posts.map(post=>post.id.toString()===id?{...post,title:title,body:body}:post)
+    setPosts(newPost)
+    setTitle('')
+    setBody('')
+    navigator('/')
+  }
   return (
     <div className="App">
       <Header/>
@@ -56,17 +64,35 @@ function App() {
           <Route path="/post" >
             <Route index element={
                 <NewPost
+                  heading="New Post"
                   handleNewPost={handleNewPost}
                   title={title}
                   setTitle={setTitle}
                   body={body}
                   setBody={setBody}
+                  posts={posts}
                 />
-              }/>
-              <Route path=":id" element={
+              }
+            />
+            <Route path=":id" element={
                 <Post
                   posts={posts}
-                />}/>
+                  handleEditPost={handleEditPost}
+                />
+                }
+            />
+            <Route path="edit/:id" element={
+                <NewPost
+                  heading="Edit Post"
+                  handleEditPost={handleEditPost}
+                  title={title}
+                  setTitle={setTitle}
+                  body={body}
+                  setBody={setBody}
+                  posts={posts} 
+                />
+              }
+            />
             </Route>
         </Routes>
       <Footer/>

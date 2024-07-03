@@ -8,6 +8,7 @@ const NavigationBar = () => {
             <input
                 type='text'
                 placeholder='Search'
+                name='search'
             />
         </form>
         <ul className='menu'>
